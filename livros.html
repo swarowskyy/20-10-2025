@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas Amarelas</title>
+    <link rel="stylesheet" href="css/livros.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Páginas <span>Amarelada</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#products">Produtos</a></li>
+                    <li><a href="livros.html">Mais informações sobre os livros</a></li>
+                    <li class="cart-icon" id="cart-icon">
+                        Carrinho
+                        <span class="cart-count" id="cart-count">0</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+
+    <!-- Carrinho lateral -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+        <div class="cart-total">
+            Total: R$ <span id="cart-total">0.00</span>
+        </div>
+        <button class="checkout-btn">Finalizar Compra</button>
+    </div>
+
+    <section id="cadrastro" class="products">
+        <h2 class="section-title">Descrições dos livros:</h2>
+        <form method="post">
+            <label>Nome Completo</label>
+            <input type="text" id="nome" placeholder="nome aqui" required>
+            <label>E-mail</label>
+            
+            <button type="submit" id="confirmarbotao" class="btn-cadastro">Voltar</button>
+
+           
+        </form>
+            <script>
+         // 1. Selecionar o elemento pelo ID
+        var campoCep = document.getElementById('cep');
+        // 2. Adicionar o event listener para o evento 'blur'(executado quando é retirado o mouse)
+        campoCep.addEventListener('blur', function() {
+            let valorCep  = campoCep.value; // pegar o valor do campoCep
+            fetch("https://viacep.com.br/ws/"+valorCep+"/json/")
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    document.getElementById('logradouro').value = data.logradouro || '';
+                    document.getElementById('bairro').value= data.bairro || '';
+                    document.getElementById('cidade').value= data.localidade || '';
+                    document.getElementById('estado').value= data.estado || '';
+                    mudaborda(0)
+                })
+                .catch(error =>mudaborda(1));
+            });
+             function mudaborda(cor){
+                if(cor == 1){
+                    campoCep.style.border= "4px solid red";
+                }else{
+                    campoCep.style.border="4px solid green";
+                }
+             }
+             // Redirecionar ao clicar no botão Confirmar
+document.getElementById('confirmarbotao').addEventListener('click', function(event) {
+    event.preventDefault(); // impede o envio do formulário
+    window.location.href = "index.html"; // redireciona para a página inicial
+})
+    
+            </script>
+   
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Do fio a Pavio. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </footer>
+   <script src="js/scripsts.js"></script>
+    
+</body>
+</html>
