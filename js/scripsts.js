@@ -1,6 +1,6 @@
 
         // Dados dos produtos
-        const products = [
+       const products = [
             {
                 id: 1,
                 name: "O Deus que destrói sonhos-Capa dura ",
@@ -17,7 +17,7 @@
                 id: 3,
                 name: "Box A Empregada Capa comum",
                 price: 94.99,
-                image: "image/livro3.png"
+                image: "image/livro 3 2.0.png"
             },
         ];
 
@@ -52,8 +52,7 @@
                     <div class="product-info">
                         <h3 class="product-title">${product.name}</h3>
                         <p class="product-price">R$ ${product.price.toFixed(2)}</p>
-                        <button class="add-to-cart" data-id="${product.id}">Adicionar ao Carrinho</button>
-                        <button class="add-to-cart" data-id="${product.id}">Mais Informações</button>
+                        <a href="livro${product.id}.html">  <button class="add-to-cart">Mais informações</button></a><br>
                     </div>
                 `;
                 productsGrid.appendChild(productCard);
@@ -69,6 +68,24 @@
         }
 
         // Adicionar produto ao carrinho
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            // Verificar se o produto já está no carrinho
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showNotification(`${product.name} adicionado ao carrinho!`);
+        }
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             
@@ -185,4 +202,5 @@
             cartSidebar.classList.remove('active');
             overlay.classList.remove('active');
         });
-    
+       
+   
