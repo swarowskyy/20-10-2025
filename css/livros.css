@@ -1,23 +1,19 @@
-/*
- * --------------------------------
- * CONFIGURAÇÃO DE CORES (Página Amarelada)
- * --------------------------------
- */
+
  :root {
     /* Cores do Tema "Página Amarelada" */
-    --cor-primaria: #8B4513;    /* Marrom-Sépia (para botões/destaques) */
-    --cor-secundaria: #A0522D;  /* Marrom-Claro (para o header/nav/footer) */
-    --cor-fundo: #F5DEB3;       /* Creme/Bege (Cor da página amarelada) */
-    --cor-destaque: #CD853F;    /* Bronze/Castanho (para links/hover/borda) */
-    --cor-texto: #4B3621;       /* Marrom Escuro (Texto principal) */
+    --cor-primaria: #8B4513;    /*  botões/destaques */
+    --cor-secundaria: #A0522D;  /*  header/nav/footer */
+    --cor-fundo: #F5DEB3;       /* Cor da página amarelada */
+    --cor-destaque: #CD853F;    /* links/hover/borda */
+    --cor-texto: #4B3621;       /* Texto principal */
     --cor-branco: #FFFFFF;
     --cor-sucesso: green;
     --cor-erro: red;
 }
 
-/* -------------------------------- */
+
 /* GERAL E RESET */
-/* -------------------------------- */
+
 *{
     margin: 0;
     padding: 0;
