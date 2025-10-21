@@ -1,3 +1,4 @@
+/* Reset Global */
 *{
     margin: 0;
     padding: 0;
@@ -5,15 +6,17 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Corpo (Background da Página Amarelada) */
 body {
-    background-color: #F5DEB3;
-    color: #333;
+    background-color: var(--cor-fundo); /* Creme/Bege */
+    color: var(--cor-texto); /* Marrom Escuro */
     line-height: 1.6;
 }
 
+/* Cabeçalho (Header) */
 header {
-    background-color: #F5DEB3;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--cor-secundaria); /* Marrom-Claro */
+    box-shadow: 0 2px 10px var(--cor-sombra);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -27,17 +30,19 @@ header {
     margin: 0 auto;
 }
 
+/* Logo */
 .logo {
     font-size: 1.8rem;
     font-weight: 800;
-    color: #444141;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    color: var(--cor-texto); /* Marrom Escuro */
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .logo span {
-    color: #1a1616;
+    color: var(--cor-primaria); /* Marrom-Sépia */
 }
 
+/* Navegação (Nav) */
 nav ul {
     display: flex;
     list-style: none;
@@ -49,27 +54,28 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #030303;
+    color: var(--cor-branco); /* Branco para contraste no header */
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #6e0c09ad;
+    color: var(--cor-destaque); /* Bronze/Castanho para hover */
 }
 
+/* Ícone do Carrinho */
 .cart-icon {
     position: relative;
     cursor: pointer;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .cart-count {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #eb0b03ad;
-    color: rgb(197, 26, 26);
+    background-color: var(--cor-aviso); /* Vermelho mais sutil para o aviso */
+    color: var(--cor-branco); /* Branco para o número */
     border-radius: 50%;
     width: 18px;
     height: 18px;
@@ -78,46 +84,51 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
+
+/* Seção Hero */
+/* O background-image e as cores de texto branca foram mantidas para garantir legibilidade sobre a imagem GIF */
 .hero {
     background-image: url(https://i.pinimg.com/originals/59/1f/56/591f5618423822e347cf9c9899bdf697.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: white;
+    color: var(--cor-branco); /* Branco para contraste */
     padding: 4rem 2rem;
     text-align: center;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 .hero p {
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 
+/* Botão (CTA) */
 .btn {
     display: inline-block;
-    background-color: #F5DEB3;
-    color: #0f0d9be1;
+    background-color: var(--cor-primaria); /* Marrom-Sépia */
+    color: var(--cor-branco); /* Branco */
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .btn:hover {
-    background-color: #F5DEB3;
+    background-color: var(--cor-destaque); /* Bronze/Castanho */
     transform: translateY(-2px);
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 
+/* Seção de Produtos */
 .products {
     max-width: 1200px;
     margin: 3rem auto;
@@ -128,7 +139,7 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    color: #2c3e50;
+    color: var(--cor-primaria); /* Marrom-Sépia */
 }
 .products-grid {
     display: grid;
@@ -136,210 +147,42 @@ nav ul li a:hover {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
 }
-p a{
+
+/* Estilo para links dentro de <p> */
+p a {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #da1010fa;
+    color: var(--cor-aviso); /* Cor de Aviso (ajustei para o aviso mais discreto) */
     margin-bottom: 1rem;
 }
-b{
+/* Estilo para texto em negrito <b> */
+b {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #00087afa;
+    color: var(--cor-primaria); /* Marrom-Sépia */
     margin-bottom: 1rem;
 }
-.livro-sinopse{
+
+/* Sinopse do Livro */
+.livro-sinopse {
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    background-color: white;
+    background-color: var(--cor-branco); /* Fundo branco para destaque */
     padding: 30px;
-    border: 1px solid #ddd;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--cor-destaque); /* Borda Bronze/Castanho */
+    box-shadow: 2px 2px 5px var(--cor-sombra);
 }
-.livro-sinopse-imagem img{
-max-width: 300px;
-height: auto;
-display: block;
+.livro-sinopse-imagem img {
+    max-width: 300px;
+    height: auto;
+    display: block;
 }
-.livro-sinopse-info h2{
-color: #5b3e6b;
-margin-top: 0
+.livro-sinopse-info h2 {
+    color: var(--cor-texto); /* Marrom Escuro */
+    margin-top: 0
 }
-.livro-sinopse-info p{
-    line-height: 1.6;
-    text-align: justify;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #ffffff;
-    color: #333;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #F5DEB3;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #444141;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-}
-
-.logo span {
-    color: #1a1616;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 1.5rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #030303;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #6e0c09ad;
-}
-
-.cart-icon {
-    position: relative;
-    cursor: pointer;
-    font-family:Arial, Helvetica, sans-serif
-}
-
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #eb0b03ad;
-    color: rgb(197, 26, 26);
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 0.7rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.hero {
-    background-image: url(https://i.pinimg.com/originals/59/1f/56/591f5618423822e347cf9c9899bdf697.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #ddd;
-    padding: 4rem 2rem;
-    text-align: center;
-    font-family:Arial, Helvetica, sans-serif
-}
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-family:Arial, Helvetica, sans-serif
-}
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    font-family:Arial, Helvetica, sans-serif
-}
-
-.btn {
-    display: inline-block;
-    background-color: #fff;
-    color: #0f0d9be1;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    font-family:Arial, Helvetica, sans-serif
-}
-
-.btn:hover {
-    background-color: #f1f1f1;
-    transform: translateY(-2px);
-    font-family:Arial, Helvetica, sans-serif
-}
-
-.products {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: #2c3e50;
-}
-.products-grid {
-    display: grid;
-    width: 300px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-}
-p a{
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #da1010fa;
-    margin-bottom: 1rem;
-}
-b{
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #00087afa;
-    margin-bottom: 1rem;
-}
-.livro-sinopse{
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    background-color: white;
-    padding: 30px;
-    border: 1px solid #ddd;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-.livro-sinopse-imagem img{
-max-width: 300px;
-height: auto;
-display: block;
-}
-.livro-sinopse-info h2{
-color: #4B3621;
-margin-top: 0
-}
-.livro-sinopse-info p{
+.livro-sinopse-info p {
     line-height: 1.6;
     text-align: justify;
 }
